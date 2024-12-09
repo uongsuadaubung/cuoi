@@ -1,0 +1,13 @@
+POST http://localhost:3000/api/diary
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "táo",
+  "message": "chúc mừng",
+  "time": "09/12/2024 21:02"
+}
+
+###
+GET http://localhost:3000/api/diary
+Accept: application/json

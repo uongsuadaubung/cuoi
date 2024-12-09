@@ -1,0 +1,18 @@
+{
+  "name": "cuoi",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "website-scraper": "^5.3.1",
+    "xlsx": "^0.18.5"
+  }
+}

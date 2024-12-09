@@ -1,0 +1,13 @@
+POST http://localhost:3000/api/confirmation
+Accept: application/json
+Content-Type: application/json
+
+{
+  "your_name": "mạnh",
+  "wedding_ceremony": "Yes",
+  "groom_reception": "No",
+  "will_you_attend": "I will definitely attend",
+  "whose_guest_are_you": "Bride"
+}
+
+###"I'm sorry, I can't make it" Groom
