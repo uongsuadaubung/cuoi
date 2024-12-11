@@ -1564,17 +1564,32 @@
                                                         <span class="wpcf7-form-control-wrap"
                                                               data-name="checkbox-party"><span
                                                                 class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required"><span
-                                                                class="wpcf7-list-item first"><label><input
+                                                                class="wpcf7-list-item first">
+                                                            <label><input
                                                                 id="wedding-ceremony"
                                                                 type="checkbox" name="checkbox-party[]"
                                                                 value="LỄ THÀNH HÔN"><span
-                                                                class="wpcf7-list-item-label">LỄ THÀNH HÔN</span></label></span><span
+                                                                class="wpcf7-list-item-label">LỄ THÀNH HÔN</span>
+                                                            </label></span>
+                                                            <span
                                                                 class="wpcf7-list-item last"><label><input
                                                                 id="groom_reception"
                                                                 type="checkbox" name="checkbox-party[]"
                                                                 value="TIỆC CƯỚI NHÀ TRAI"><span
-                                                                class="wpcf7-list-item-label">TIỆC CƯỚI NHÀ TRAI</span></label></span></span></span>
+                                                                class="wpcf7-list-item-label">TIỆC CƯỚI NHÀ TRAI</span>
+                                                        </label></span>
+                                                            <span
+                                                                class="wpcf7-list-item last"><label><input
+                                                                id="bride_reception"
+                                                                type="checkbox" name="checkbox-party[]"
+                                                                value="TIỆC CƯỚI NHÀ GÁI"><span
+                                                                class="wpcf7-list-item-label">TIỆC CƯỚI NHÀ GÁI</span>
+                                                        </label></span>
+
+
+                                                        </span></span>
                                                     </p>
+
                                                     <p><label>Bạn sẽ đến chứ?</label><br>
                                                         <span class="wpcf7-form-control-wrap"
                                                               data-name="menu-coming">
@@ -2347,6 +2362,7 @@
     const confirmName = document.getElementById('your-name');
     const weddingCeremony = document.getElementById('wedding-ceremony');
     const groomReception = document.getElementById('groom_reception');
+    const brideReception = document.getElementById('bride_reception');
     const willYouAttend = document.getElementById('will_you_attend');
     const whoseGuestAreYou = document.getElementById('whose_guest_are_you');
     const btnSubmit = document.getElementById('btn-submit');
@@ -2356,6 +2372,7 @@
         "your_name": confirmName.value,
         "wedding_ceremony": weddingCeremony.checked ? "Có" : "Không",
         "groom_reception": groomReception.checked ? "Có" : "Không",
+        "bride_reception": brideReception.checked ? "Có" : "Không",
         "will_you_attend": willYouAttend.value,
         "whose_guest_are_you": whoseGuestAreYou.checked ? "Cô dâu" : "Chú rể"
       }
@@ -2389,6 +2406,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     const generateListDiary = (data) => {
+      if (!data || !data.length) return;
       const listDiary = document.getElementById('list-diary');
       listDiary.innerHTML = '';
       let entryList = "";

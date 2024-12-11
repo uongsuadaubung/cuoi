@@ -41,10 +41,11 @@ app.post('/api/confirmation', (req, res) => {
     //   "your_name": "kien",
     //   "wedding_ceremony": "Yes",
     //   "groom_reception": "No",
+    //   "bride_reception": "No",
     //   "will_you_attend": "I will definitely attend",
     //   "whose_guest_are_you": "Bride"
     // }
-    if (!receivedData.your_name || !receivedData.wedding_ceremony || !receivedData.groom_reception || !receivedData.will_you_attend || !receivedData.whose_guest_are_you) {
+    if (!receivedData.your_name || !receivedData.wedding_ceremony || !receivedData.groom_reception || !receivedData.bride_reception || !receivedData.will_you_attend || !receivedData.whose_guest_are_you) {
         res.status(400).json({ message: 'Không nhận được được dữ liệu!' });
         return;
     }
@@ -52,6 +53,7 @@ app.post('/api/confirmation', (req, res) => {
         your_name: receivedData.your_name.trim(),
         wedding_ceremony: receivedData.wedding_ceremony.trim(),
         groom_reception: receivedData.groom_reception.trim(),
+        bride_reception: receivedData.bride_reception.trim(),
         will_you_attend: receivedData.will_you_attend.trim(),
         whose_guest_are_you: receivedData.whose_guest_are_you.trim()
     }
@@ -61,6 +63,7 @@ app.post('/api/confirmation', (req, res) => {
         if (item.your_name === newData.your_name
             && item.wedding_ceremony === newData.wedding_ceremony
             && item.groom_reception === newData.groom_reception
+            && item.bride_reception === newData.bride_reception
             && item.will_you_attend === newData.will_you_attend
             && item.whose_guest_are_you === newData.whose_guest_are_you){
             find = true;
@@ -77,7 +80,7 @@ app.post('/api/confirmation', (req, res) => {
 
 app.get('/api/diary', (req, res) => {
 
-    res.json({message: "oke", data: diaryData.slice(0,10)});
+    res.json({message: "oke", data: diaryData.slice(0,5)});
 })
 app.post('/api/diary', (req, res) => {
     const receivedData = req.body;
@@ -96,7 +99,7 @@ app.post('/api/diary', (req, res) => {
         saveFile(diaryPath,diaryData);
     }
 
-    res.json({message: "oke", data: diaryData.slice(0,10)});
+    res.json({message: "oke", data: diaryData.slice(0,5)});
 })
 
 app.get('/excel-diary', (req, res) => {
