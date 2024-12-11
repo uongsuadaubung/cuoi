@@ -1221,17 +1221,19 @@ input.wpcf7-submit.button {
         padding: 30px 0 0 0;
     }
 }
-#text-1093572753 {
-    color: rgb(0, 0, 0);
+.diary-text {
+    color: rgb(0, 0, 0) !important;
 }
 
-#text-1093572753 > * {
-    color: rgb(0, 0, 0);
+.diary-text > * {
+    color: rgb(0, 0, 0) !important;
 }
-#col-262126922 > .col-inner {
+.diary-col > .col-inner {
     padding: 20px 40px 1px 30px;
 }
-
+#list-diary .row:nth-child(even) .col-inner {
+    background-color: rgba(186, 133, 81, 0.366);
+}
 #text-2240658811 {
     color: rgb(0, 0, 0);
 }
