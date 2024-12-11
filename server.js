@@ -21,11 +21,16 @@ const saveFile = (path, data) => {
 const readFile = (path) => {
     let data = "[]";
     if (!fs.existsSync(path)) {
-        saveFile(path,data);
-    }else {
+        saveFile(path, data);
+    } else {
         data = fs.readFileSync(path, 'utf8');
     }
-    return JSON.parse(data);
+    try {
+        return JSON.parse(data);
+    } catch (error) {
+        console.error("Error parsing JSON:", error);
+        return []; // Trả về mảng rỗng nếu lỗi
+    }
 }
 const diaryData = readFile(diaryPath);
 
